@@ -8,6 +8,7 @@ img {
   max-width: 100%;
 }
 
+
 ul {
   list-style: none;
 }
@@ -207,4 +208,11 @@ body {
   .copy {
     margin-bottom: 0px;
   }
+}
+
+.js-tabcontent section {
+  display: none;
+}
+.js-tabcontent section.active {
+  display: block !important;
 }
