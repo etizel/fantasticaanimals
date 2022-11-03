@@ -64,7 +64,7 @@ activeAccordion();
 
 function activeLinks() {
 const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
-console.log(linksInternos)
+
 
 
 function scrollToSection(e) {
@@ -95,6 +95,19 @@ activeLinks();
 
 
 
+const sections = document.querySelectorAll('.js-scroll');
+
+function animaScroll() {
+  sections.forEach((section) => {
+    const sectionTop = section.getBoundingClientRect().top - 500;
+    if(sectionTop < 0) {
+      section.classList.add('active');
+    }
+  })
+}
+
+
+window.addEventListener('scroll', animaScroll)
 
 
 
@@ -103,29 +116,5 @@ activeLinks();
 
 
 
-
-
-// function initTabNav() {
-//   const tabMenu = document.querySelectorAll('.js-tabmenu li');
-//   const tabContent = document.querySelectorAll('.js-tabcontent section');
-
-//   if(tabMenu.length && tabContent.length) {
-//     tabContent[0].classList.add('ativo');
-
-//     function activeTab(index) {
-//       tabContent.forEach((section) => {
-//         section.classList.remove('ativo');
-//       });
-//       tabContent[index].classList.add('ativo');
-//     }
-//     tabMenu.forEach((itemMenu, index) => {
-//       itemMenu.addEventListener('click', () => {
-//         activeTab(index);
-//       });
-//     });
-//   }
-// }
-
-// initTabNav();
 
 
