@@ -1,4 +1,6 @@
 
+
+function tabNavegation() {
 const tabMenu = document.querySelectorAll('.js-tabmenu li');
 const tabContent = document.querySelectorAll('.js-tabcontent section');
 if(tabMenu.length && tabContent.length) {
@@ -21,6 +23,8 @@ itemMenu.addEventListener('click', () => {
   activeTab(index);
 })
 })
+}
+tabNavegation();
 
 
 
@@ -28,13 +32,28 @@ itemMenu.addEventListener('click', () => {
 
 
 
+function activeAccordion() {
+const accordionList = document.querySelectorAll('.js-accordion dt');
+
+const active = 'active';
+
+if(accordionList.length) {
+accordionList[0].classList.add(active);
+accordionList[0].nextElementSibling.classList.add(active)
 
 
+function activeAccordion(e) {
+  this.classList.toggle(active);
+  this.nextElementSibling.classList.toggle(active);
+}
 
 
-
-
-
+accordionList.forEach((item) => {
+  item.addEventListener('click', activeAccordion);
+})
+}
+};
+activeAccordion();
 
 
 
