@@ -1,3 +1,7 @@
+[data-cor="azul"] {
+  background: blue;
+}
+
 body, h1, h2, ul, li, p, dd, dt, dl {
   margin: 0px;
   padding: 0px;
@@ -7,7 +11,6 @@ img {
   display: block;
   max-width: 100%;
 }
-
 
 ul {
   list-style: none;
@@ -20,9 +23,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
-.purple {
-  background-color: lightpink;
-}
+
 .menu {
   grid-column: 3 / 5;
   margin-top: 2rem;
@@ -98,6 +99,7 @@ body {
   overflow-y: scroll;
   grid-column: 2;
 }
+
 .animais-lista li {
   cursor: pointer;
 }
@@ -125,8 +127,7 @@ body {
 }
 
 .faq-lista {
-  grid-column: 2 / 4;
-  cursor: pointer;
+  grid-column: 2 / 4
 }
 
 .faq-lista dt {
@@ -175,7 +176,6 @@ body {
 }
 
 .copy {
-  margin-bottom: 100px;
   grid-column: 3/5;
   margin-bottom: 2rem;
   background: #FB5;
@@ -215,45 +215,61 @@ body {
   }
 }
 
-.js .js-tabcontent section {
+.js [data-tab="content"] section {
   display: none;
 }
-.js-tabcontent section.active {
+
+[data-tab="content"] section.ativo {
   display: block !important;
-  transform: matrix3d(-30px, 0, 0);
-  animation: show .5s forwards;
 }
 
-@keyframes show {
+[data-tab="content"] section.ativo.show-right {
+  animation: show-right .5s forwards;
+}
+
+[data-tab="content"] section.ativo.show-down {
+  animation: show-down .5s forwards;
+}
+
+@keyframes show-right {
   from {
     opacity: 0;
-    transform: matrix3d(-30px, 0, 0);
-  } 
+    transform: translate3d(-30px, 0, 0);
+  }
   to {
     opacity: 1;
-    transform: translate(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.js .js-accordion dd {
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.js [data-anime="accordion"] dd {
   display: none;
 }
 
-.js-accordion  dt::after {
-  content: '↴';
-  width: 3px;
-  height: 6px;
-  padding-left: 10px;
+[data-anime="accordion"] dt::after {
+  content: '⬎';
+  margin-left: 10px;
 }
-.js-accordion  dt.active::after {
-  content: '↺';
-  padding-left: 10px;
+
+[data-anime="accordion"] dt.ativo::after {
+  content: '⬏';
 }
-.js .js-accordion dd.active {
+
+[data-anime="accordion"] dd.ativo {
   display: block;
   animation: slideDown .5s forwards;
 }
-
 
 @keyframes slideDown {
   from {
@@ -261,16 +277,18 @@ body {
     max-height: 0;
   }
   to {
-    max-height: 180px;
+    max-height: 200px;
     opacity: 1;
   }
 }
 
-.js .js-scroll {
+.js [data-anime="scroll"] {
   opacity: 0;
-  transform: translate(-30px, 0, 0);
-}
-.js .js-scroll.active {
-  opacity: 1;
+  transform: translate3d(-30px, 0, 0);
   transition: .3s;
+}
+
+.js [data-anime="scroll"].ativo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
