@@ -4,9 +4,11 @@ import initAccordion from './modules/accordion.js';
 import initTabNav from './modules/tabnav.js';
 import * as teste from './modules/teste.js';
 import initModal from './modules/modal.js';
+import initToolTip from './modules/inittool.js';
 
 initScrollSuave();
 initAnimacaoScroll();
 initAccordion();
 initTabNav();
 initModal();
+initToolTip();
