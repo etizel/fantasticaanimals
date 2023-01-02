@@ -29,6 +29,7 @@ const onMouseLeave = {
   handleEvent() {
     this.toolTipBox.remove();
     this.element.removeEventListener('mouseleave', onMouseLeave);
+    this.element.removeEventListener('mousemove', onMouseMove);
   },
 };
 
