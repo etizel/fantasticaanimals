@@ -1,22 +1,13 @@
 export default function initToolTip() {}
 
-const toolTip = document.querySelectorAll('[data-tooltip]');
+const tooltips = document.querySelectorAll('[data-tooltip]');
 
-toolTip.forEach((item) => {
-  item.addEventListener('mouseover', activeMouse);
+function onMouseOver(event) {
+  const div = document.createElement('div');
+  div.innerText = 'Próximo ao estacionamento';
+  const active = event;
+}
+
+tooltips.forEach((item) => {
+  item.addEventListener('mouseover', onMouseOver);
 });
-
-function activeMouse(event) {
-  const tooltipBox = criarToolTipBox(this);
-  tooltipBox.style.top = event.pageY + 'px';
-  tooltipBox.style.left = event.pageX + 'px';
-}
-
-function criarToolTipBox(element) {
-  const toolTipBox = document.createElement('div');
-  const text = element.getAttribute('aria-label');
-  toolTipBox.classList.add('tooltip');
-  toolTipBox.innerText = text;
-  document.body.appendChild(toolTipBox);
-  return toolTipBox;
-}
