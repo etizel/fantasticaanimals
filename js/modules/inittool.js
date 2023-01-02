@@ -11,12 +11,16 @@ function onMouseOver(event) {
   toolTipBox.style.top = event.pageY + 'px';
   toolTipBox.style.left = event.pageX + 'px';
 
+  onMouseLeave.toolTipBox = toolTipBox;
   this.addEventListener('mouseleave', onMouseLeave);
-
-  function onMouseLeave() {
-    toolTipBox.remove();
-  }
 }
+
+const onMouseLeave = {
+  toolTipBox: '',
+  handleEvent() {
+    this.toolTipBox.remove();
+  },
+};
 
 function criarToolTipBox(element) {
   const toolTipBox = document.createElement('div');
