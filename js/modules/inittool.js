@@ -8,6 +8,8 @@ toolTip.forEach((item) => {
 
 function activeMouse(event) {
   const tooltipBox = criarToolTipBox(this);
+  tooltipBox.style.top = event.pageY + 'px';
+  tooltipBox.style.left = event.pageX + 'px';
 }
 
 function criarToolTipBox(element) {
