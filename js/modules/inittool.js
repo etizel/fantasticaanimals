@@ -11,14 +11,24 @@ function onMouseOver(event) {
   toolTipBox.style.top = event.pageY + 'px';
   toolTipBox.style.left = event.pageX + 'px';
 
+  onMouseMove.toolTipBox = toolTipBox;
+  this.addEventListener('mousemove', onMouseMove);
   onMouseLeave.toolTipBox = toolTipBox;
+  onMouseLeave.element = this;
   this.addEventListener('mouseleave', onMouseLeave);
 }
 
+const onMouseMove = {
+  handleEvent(event) {
+    this.toolTipBox.style.top = event.pageY + 20 + 'px';
+    this.toolTipBox.style.left = event.pageX + 20 + 'px';
+  },
+};
+
 const onMouseLeave = {
-  toolTipBox: '',
   handleEvent() {
     this.toolTipBox.remove();
+    this.element.removeEventListener('mouseleave', onMouseLeave);
   },
 };
 
