@@ -14,16 +14,22 @@ function handleClick(event) {
   outsideClick(this, () => this.classList.remove('active'));
 }
 
-function outsideClick(element, callback) {
+function outsideClick(element, events, callback) {
   const html = document.documentElement;
   const outside = 'data-outside';
-
-  html.addEventListener('click', handleOutsideClick);
-  element.setAttribute(outside);
+  if (!element.hasAttribute(outside)) {
+    events.forEach((userEvent) =>
+      html.addEventListener(userEvent, handleOutsideClick),
+    );
+    element.setAttribute(outside, '');
+  }
 
   function handleOutsideClick(event) {
     if (!element.contains(event.target)) {
-      html.removeEventListener('click', handleOutsideClick);
+      element.removeAttribute(outside);
+      events.forEach((userEvent) =>
+        html.removeEventListener(userEvent, handleOutsideClick),
+      );
       callback();
     }
   }
