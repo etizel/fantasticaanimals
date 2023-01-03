@@ -11,14 +11,14 @@ dropDownMenus.forEach((menu) => {
 function handleClick(event) {
   event.preventDefault();
   this.classList.toggle('active');
-  outsideClick();
+  outsideClick(() => console.log('active'));
 }
 
-function outsideClick() {
+function outsideClick(callback) {
   const html = document.documentElement;
   html.addEventListener('click', handleOutsideClick);
 
   function handleOutsideClick(event) {
-    console.log(event);
+    callback();
   }
 }
