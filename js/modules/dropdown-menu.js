@@ -10,15 +10,21 @@ dropDownMenus.forEach((menu) => {
 
 function handleClick(event) {
   event.preventDefault();
-  this.classList.toggle('active');
-  outsideClick(() => console.log('active'));
+  this.classList.add('active');
+  outsideClick(this, () => this.classList.remove('active'));
 }
 
-function outsideClick(callback) {
+function outsideClick(element, callback) {
   const html = document.documentElement;
+  const outside = 'data-outside';
+
   html.addEventListener('click', handleOutsideClick);
+  element.setAttribute(outside);
 
   function handleOutsideClick(event) {
-    callback();
+    if (!element.contains(event.target)) {
+      html.removeEventListener('click', handleOutsideClick);
+      callback();
+    }
   }
 }
