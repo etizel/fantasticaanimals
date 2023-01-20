@@ -6,9 +6,9 @@ import initModal from './modules/modal.js';
 import initToolTip from './modules/inittool.js';
 import initDropDownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
-import initNumber from './modules/numeros.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimals from './modules/fatch-animals.js';
+import initAnimalsFetch from './modules/animals-fetch.js';
 
 initScrollSuave();
 initAnimacaoScroll();
@@ -18,6 +18,6 @@ initModal();
 initToolTip();
 initDropDownMenu();
 initMenuMobile();
-initNumber();
 initFuncionamento();
 initFetchAnimals();
+initAnimalsFetch();
