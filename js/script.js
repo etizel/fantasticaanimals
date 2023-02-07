@@ -7,8 +7,8 @@ import initToolTip from './modules/inittool.js';
 import initDropDownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
-import initFetchAnimals from './modules/fatch-animals.js';
-import initAnimalsFetch from './modules/animals-fetch.js';
+import initFetchAnimals from './modules/fetch-animals.js';
+import initFetchBitcoin from './modules/fetch-bitcoin.js';
 
 initScrollSuave();
 initAnimacaoScroll();
@@ -20,4 +20,4 @@ initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
 initFetchAnimals();
-initAnimalsFetch();
+initFetchBitcoin();
