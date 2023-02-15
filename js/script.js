@@ -9,6 +9,7 @@ import initMenuMobile from './modules/menu-mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimals from './modules/fetch-animals.js';
 import initFetchBitcoin from './modules/fetch-bitcoin.js';
+import initAnimaNumeros from './modules/anima-numeros.js';
 
 initScrollSuave();
 initAnimacaoScroll();
@@ -21,3 +22,4 @@ initMenuMobile();
 initFuncionamento();
 initFetchAnimals();
 initFetchBitcoin();
+initAnimaNumeros();

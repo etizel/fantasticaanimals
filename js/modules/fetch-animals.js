@@ -1,4 +1,4 @@
-import initNumber from './numeros.js';
+import initNumber from './anima-numeros.js';
 
 export default function initFetchAnimals() {
   async function fetchAnimals(url) {
