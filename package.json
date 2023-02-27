@@ -1,27 +1,19 @@
 {
-  "name": "fantasticanimals",
+  "name": "1003-eslint",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/etizel/fantasticaanimals.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/etizel/fantasticaanimals/issues"
-  },
-  "homepage": "https://github.com/etizel/fantasticaanimals#readme",
   "devDependencies": {
-    "eslint": "^8.33.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.6.0"
+    "eslint-config-prettier": "^6.11.0"
   }
 }
