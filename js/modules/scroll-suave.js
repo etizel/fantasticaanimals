@@ -6,11 +6,6 @@ export default class ScrollSuave {
     } else {
       this.options = options;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
-    this.scrollToSection = this.scrollToSection.bind(this);
   }
 
   scrollToSection(event) {
@@ -22,17 +17,13 @@ export default class ScrollSuave {
 
   addEventLink() {
     this.linksInternos.forEach((link) => {
-      link.addEventListener('click', this.scrollToSection);
+      link.addEventListener('click', this.scrollToSection.bind(this));
     });
   }
 
   init() {
     if (this.linksInternos.length) {
-<<<<<<< HEAD
-      this.addEventLink();
-=======
       this.addLinkEvent();
->>>>>>> main
     }
     return this;
   }
