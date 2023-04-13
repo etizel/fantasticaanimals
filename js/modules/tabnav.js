@@ -1,4 +1,7 @@
-export default function initTabNav() {
+export default class TabNav {
+  constructor() {
+    
+  }
   const tabMenu = document.querySelectorAll('[data-tab="menu"] li');
   const tabContent = document.querySelectorAll('[data-tab="content"] section');
 
