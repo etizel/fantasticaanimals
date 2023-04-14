@@ -1,31 +1,47 @@
-export default function initAnimaNumeros() {
-  function animaNumeros() {
-    const numeros = document.querySelectorAll('[data-numero]');
+export default class AnimaNumeros {
+  constructor(numeros, observerTarget, activeObserver) {
+    this.numeros = document.querySelectorAll(numeros);
+    this.observerTarget = document.querySelector(observerTarget);
+    this.activeObserver = activeObserver;
+  }
 
+  static animaAsync(numero) {
+    const total = +numero.innerText;
+    const inscremento = Math.floor(total / 100);
+    let start = 0;
+    const timer = setInterval(() => {
+      start += inscremento;
+      numero.innerText = start;
+      if (start > total) {
+        numero.innerText = total;
+        clearInterval(timer);
+      }
+    }, 25 * Math.random());
+  }
+
+  animaNumeros() {
+    const numeros = document.querySelectorAll();
     numeros.forEach((numero) => {
-      const total = +numero.innerText;
-      const inscremento = Math.floor(total / 100);
-      let start = 0;
-      const timer = setInterval(() => {
-        start += inscremento;
-        numero.innerText = start;
-        if (start > total) {
-          numero.innerText = total;
-          clearInterval(timer);
-        }
-      }, 25 * Math.random());
+      this.animaAsync(numero);
     });
   }
 
-  let observer;
-  function handleMutation(mutation) {
-    if (mutation[0].target.classList.contains('ativo')) {
-      observer.disconnect();
-      animaNumeros();
+  handleMutation(mutation) {
+    if (mutation[0].target.classList.contains(this.activeObserver)) {
+      this.observer.disconnect();
+      this.animaNumeros();
     }
   }
-  observer = new MutationObserver(handleMutation);
 
-  const observerTarget = document.querySelector('.numeros');
-  observer.observe(observerTarget, { attributes: true });
+  addObserverEvent() {
+    this.observer = new MutationObserver(this.handleMutation.bind(this));
+    this.observer.observe(this.observerTarget, { attributes: true });
+  }
+
+  init() {
+    if (this.numeros && this.observerTarget) {
+      this.addObserverEvent();
+    }
+    return this;
+  }
 }
