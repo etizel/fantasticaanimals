@@ -7,10 +7,10 @@ export default class AnimaNumeros {
 
   static animaAsync(numero) {
     const total = +numero.innerText;
-    const inscremento = Math.floor(total / 100);
+    const incremento = Math.floor(total / 100);
     let start = 0;
     const timer = setInterval(() => {
-      start += inscremento;
+      start += incremento;
       numero.innerText = start;
       if (start > total) {
         numero.innerText = total;
