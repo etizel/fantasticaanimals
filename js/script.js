@@ -1,6 +1,6 @@
 import ScrollSuave from './modules/scroll-suave.js';
 import initAnimacaoScroll from './modules/scroll-animacao.js';
-import initAccordion from './modules/accordion.js';
+import Accordion from './modules/accordion.js';
 // eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import TabNav from './modules/tabnav.js';
 import initModal from './modules/modal.js';
@@ -14,7 +14,9 @@ import initFetchBitcoin from './modules/fetch-bitcoin.js';
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
 
-initAccordion();
+const accordion = new Accordion('[data-anime="accordion"] dt', 'ativo');
+accordion.init();
+
 const tabNav = new TabNav(
   '[data-tab="menu"] li',
   '[data-tab="content"] section',
