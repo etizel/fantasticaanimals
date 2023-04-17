@@ -14,7 +14,7 @@ import initFetchBitcoin from './modules/fetch-bitcoin.js';
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
 
-const accordion = new Accordion();
+const accordion = new Accordion('[data-anime="accordion"] dt', 'ativo');
 accordion.init();
 
 const tabNav = new TabNav(
