@@ -13,7 +13,7 @@ export default class Accordion {
 
   activeAccordionEvent() {
     this.accordionList.forEach((item) => {
-      item.addEventListener('click', this.toggleAccordion(item));
+      item.addEventListener('click',() =>  this.toggleAccordion(item));
     });
   }
  
