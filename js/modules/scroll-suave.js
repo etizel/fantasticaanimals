@@ -24,7 +24,7 @@ export default class ScrollSuave {
 
   init() {
     if (this.linksInternos.length) {
-      this.addLinkEvent();
+      this.addEventLink();
     }
     return this;
   }
