@@ -1,8 +1,7 @@
 export default class TabNav {
-  constructor(tabMenu, tabContent, activeTab) {
+  constructor(tabMenu, tabContent) {
     this.tabMenu = document.querySelectorAll(tabMenu);
     this.tabContent = document.querySelectorAll(tabContent);
-    this.activeTab = activeTab;
   }
 
   activeTab(index) {
@@ -24,7 +23,6 @@ export default class TabNav {
 
   init() {
     if (this.tabMenu.length && this.tabContent.length) {
-      this.activeTab();
       this.addTabEvent();
     }
     return this;
