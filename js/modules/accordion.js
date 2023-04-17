@@ -2,6 +2,7 @@ export default class Accordion {
   constructor(accordionList, activeClass) {
     this.accordionList = document.querySelectorAll(accordionList);
     this.activeClass = activeClass;
+    this.toggleAccordion = this.toggleAccordion.bind(this);
   }
 
 
