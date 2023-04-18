@@ -20,7 +20,6 @@ accordion.init();
 const tabNav = new TabNav(
   '[data-tab="menu"] li',
   '[data-tab="content"] section',
-  'ativo',
 );
 tabNav.init();
 
