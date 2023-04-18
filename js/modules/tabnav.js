@@ -13,6 +13,7 @@ export default class TabNav {
     this.tabContent[index].classList.add(this.activeClass, direcao);
   }
 
+  // Add events in tabs
   addTabEvent() {
     this.tabMenu.forEach((itemMenu, index) => {
       itemMenu.addEventListener('click', () => {
@@ -23,6 +24,7 @@ export default class TabNav {
 
   init() {
     if (this.tabMenu.length && this.tabContent.length) {
+      // active first itemn
       this.activeTab(0);
       this.addTabEvent();
     }
