@@ -5,6 +5,7 @@ export default class TabNav {
     this.activeClass = 'ativo';
   }
 
+  // active tab in the index
   activeTab(index) {
     this.tabContent.forEach((section) => {
       section.classList.remove(this.activeClass);
