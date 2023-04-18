@@ -2,16 +2,19 @@ export default class TabNav {
   constructor(tabMenu, tabContent) {
     this.tabMenu = document.querySelectorAll(tabMenu);
     this.tabContent = document.querySelectorAll(tabContent);
+    this.activeClass = 'ativo';
   }
 
+  // active tab in the index
   activeTab(index) {
     this.tabContent.forEach((section) => {
-      section.classList.remove(this.activeTab);
+      section.classList.remove(this.activeClass);
     });
     const direcao = this.tabContent[index].dataset.anime;
-    this.tabContent[index].classList.add(this.activeTab, direcao);
+    this.tabContent[index].classList.add(this.activeClass, direcao);
   }
 
+  // Add events in tabs
   addTabEvent() {
     this.tabMenu.forEach((itemMenu, index) => {
       itemMenu.addEventListener('click', () => {
@@ -19,10 +22,11 @@ export default class TabNav {
       });
     });
   }
-  // tabContent[0].classList.add(this.activeTab);
 
   init() {
     if (this.tabMenu.length && this.tabContent.length) {
+      // active first itemn
+      this.activeTab(0);
       this.addTabEvent();
     }
     return this;
