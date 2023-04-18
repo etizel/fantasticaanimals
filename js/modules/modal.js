@@ -6,9 +6,12 @@ export default class Modal {
     this.activeClass = 'ativo';
   }
 
-  toggleModal(event) {
-    event.preventDefault();
+  toggleModal() {
     this.containerModal.classList.toggle(this.activeClass);
+  }
+
+  eventModal(event) {
+    event.preventDefault();
   }
 
   cliqueForaModal(event) {

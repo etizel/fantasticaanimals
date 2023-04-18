@@ -3,6 +3,7 @@ import initAnimacaoScroll from './modules/scroll-animacao.js';
 import Accordion from './modules/accordion.js';
 // eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import TabNav from './modules/tabnav.js';
+// eslint-disable-next-line import/no-named-as-default
 import Modal from './modules/modal.js';
 import initTooltip from './modules/tooltip.js';
 import initDropdownMenu from './modules/dropdown-menu.js';
