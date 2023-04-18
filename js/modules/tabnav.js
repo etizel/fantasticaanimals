@@ -7,10 +7,10 @@ export default class TabNav {
 
   activeTab(index) {
     this.tabContent.forEach((section) => {
-      section.classList.remove(this.activeTab);
+      section.classList.remove(this.activeClass);
     });
     const direcao = this.tabContent[index].dataset.anime;
-    this.tabContent[index].classList.add(this.activeTab, direcao);
+    this.tabContent[index].classList.add(this.activeClass, direcao);
   }
 
   addTabEvent() {
@@ -20,10 +20,10 @@ export default class TabNav {
       });
     });
   }
-  // tabContent[0].classList.add(this.activeTab);
 
   init() {
     if (this.tabMenu.length && this.tabContent.length) {
+      this.activeTab(0);
       this.addTabEvent();
     }
     return this;
