@@ -3,11 +3,12 @@ export default class Modal {
     this.botaoAbrir = document.querySelector(botaoAbrir);
     this.botaoFechar = document.querySelector(botaoFechar);
     this.containerModal = document.querySelector(containerModal);
+    this.activeClass = 'ativo';
   }
 
   toggleModal(event) {
     event.preventDefault();
-    containerModal.classList.toggle('ativo');
+    containerModal.classList.toggle(this.activeClass);
   }
 
   cliqueForaModal(event) {
@@ -16,13 +17,12 @@ export default class Modal {
     }
   }
 
-  
   init() {
-
+    if (this.botaoAbrir && this.botaoFechar && this.containerModal) {
+      this.addEventModal();
+    }
   }
-  if (botaoAbrir && botaoFechar && containerModal) {
-    botaoAbrir.addEventListener('click', toggleModal);
-    botaoFechar.addEventListener('click', toggleModal);
-    containerModal.addEventListener('click', cliqueForaModal);
-  }
+  // botaoAbrir.addEventListener('click', toggleModal);
+  // botaoFechar.addEventListener('click', toggleModal);
+  // containerModal.addEventListener('click', cliqueForaModal);
 }
