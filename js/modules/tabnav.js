@@ -2,6 +2,7 @@ export default class TabNav {
   constructor(tabMenu, tabContent) {
     this.tabMenu = document.querySelectorAll(tabMenu);
     this.tabContent = document.querySelectorAll(tabContent);
+    this.activeClass = 'ativo';
   }
 
   activeTab(index) {
