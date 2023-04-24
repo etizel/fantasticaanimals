@@ -23,8 +23,8 @@ export default class Tooltip {
     this.tooltipBox = tooltipBox;
   }
 
-   onMouseOver() {
-    const tooltipBox = criarTooltipBox(this);
+   onMouseOver(event) {
+    this.criarTooltipBox(event.currentTarget);
 
     onMouseMove.tooltipBox = tooltipBox;
     this.addEventListener('mousemove', onMouseMove);
