@@ -20,7 +20,7 @@ export default class Tooltip {
     tooltipBox.classList.add('tooltip');
     tooltipBox.innerText = text;
     document.body.appendChild(tooltipBox);
-    return tooltipBox;
+    this.tooltipBox = tooltipBox;
   }
 
    onMouseOver() {
