@@ -2,7 +2,6 @@ export default class Tooltip {
   constructor(tooltips) {
     this.tooltips = document.querySelectorAll(tooltips);
   }
-  const  = ;
 
   const onMouseMove = {
     handleEvent(event) {
@@ -19,7 +18,7 @@ export default class Tooltip {
     },
   };
 
-  function criarTooltipBox(element) {
+  criarTooltipBox(element) {
     const tooltipBox = document.createElement('div');
     const text = element.getAttribute('aria-label');
     tooltipBox.classList.add('tooltip');
@@ -28,7 +27,7 @@ export default class Tooltip {
     return tooltipBox;
   }
 
-  function onMouseOver() {
+   onMouseOver() {
     const tooltipBox = criarTooltipBox(this);
 
     onMouseMove.tooltipBox = tooltipBox;
@@ -42,4 +41,8 @@ export default class Tooltip {
   tooltips.forEach((item) => {
     item.addEventListener('mouseover', onMouseOver);
   });
+
+  init() {
+    
+  }
 }
