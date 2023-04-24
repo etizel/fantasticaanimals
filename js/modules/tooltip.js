@@ -3,20 +3,16 @@ export default class Tooltip {
     this.tooltips = document.querySelectorAll(tooltips);
   }
 
-  const onMouseMove = {
-    handleEvent(event) {
+    onMouseMove(event) {
       this.tooltipBox.style.top = `${event.pageY + 20}px`;
       this.tooltipBox.style.left = `${event.pageX + 20}px`;
-    },
-  };
+    }
 
-  const onMouseLeave = {
-    handleEvent() {
+    onMouseLeave() {
       this.tooltipBox.remove();
       this.element.removeEventListener('mouseleave', onMouseLeave);
       this.element.removeEventListener('mousemove', onMouseMove);
-    },
-  };
+    }
 
   criarTooltipBox(element) {
     const tooltipBox = document.createElement('div');
@@ -43,6 +39,6 @@ export default class Tooltip {
   });
 
   init() {
-    
+
   }
 }
