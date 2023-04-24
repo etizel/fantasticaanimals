@@ -22,8 +22,8 @@ export default class Modal {
   }
 
   addEventModal() {
-    this.botaoAbrir.addEventListener('click', this.toggleModal);
-    this.botaoFechar.addEventListener('click', this.toggleModal);
+    this.botaoAbrir.addEventListener('click', this.eventModal);
+    this.botaoFechar.addEventListener('click', this.eventModal);
     this.containerModal.addEventListener('click', this.cliqueForaModal);
   }
 
