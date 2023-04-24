@@ -12,6 +12,7 @@ export default class Modal {
 
   eventModal(event) {
     event.preventDefault();
+    this.toggleModal();
   }
 
   cliqueForaModal(event) {
