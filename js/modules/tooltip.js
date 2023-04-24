@@ -24,11 +24,12 @@ export default class Tooltip {
   }
 
    onMouseOver(event) {
+    // cria a tooltipBox
     this.criarTooltipBox(event.currentTarget);
 
-    event.currentTarget.addEventListener('mousemove', onMouseMove);
+    event.currentTarget.addEventListener('mousemove', this.onMouseMove);
 
-    event.currentTarget.addEventListener('mouseleave', onMouseLeave);
+    event.currentTarget.addEventListener('mouseleave', this.onMouseLeave);
   }
 
   tooltips.forEach((item) => {
