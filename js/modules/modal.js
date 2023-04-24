@@ -3,7 +3,6 @@ export default class Modal {
     this.botaoAbrir = document.querySelector(botaoAbrir);
     this.botaoFechar = document.querySelector(botaoFechar);
     this.containerModal = document.querySelector(containerModal);
-    this.activeClass = 'ativo';
 
     // bind this referente ao objeto da classe
     this.eventModal = this.eventModal.bind(this);
@@ -12,7 +11,7 @@ export default class Modal {
 
   // abre ou fecha o modal
   toggleModal() {
-    this.containerModal.classList.toggle(this.activeClass);
+    this.containerModal.classList.toggle('ativo');
   }
 
   // adiciona o evento de toggle ao modal
