@@ -21,7 +21,7 @@ export default class AnimaNumeros {
 
   animaNumeros() {
     this.numeros.forEach((numero) => {
-      this.animaAsync(numero);
+      this.constructor.animaAsync(numero);
     });
   }
 
