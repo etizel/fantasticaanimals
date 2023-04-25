@@ -13,10 +13,16 @@ export default class Tooltip {
     this.tooltipBox.style.left = `${event.pageX + 20}px`;
   }
 
-  onMouseLeave() {
+  onMouseLeave(event) {
     this.tooltipBox.remove();
-    this.element.removeEventListener('mouseleave', this.onMouseLeave);
-    this.element.removeEventListener('mousemove', this.onMouseMove);
+    event.currentTarget.element.removeEventListener(
+      'mouseleave',
+      this.onMouseLeave,
+    );
+    event.currentTarget.element.removeEventListener(
+      'mousemove',
+      this.onMouseMove,
+    );
   }
 
   criarTooltipBox(element) {
