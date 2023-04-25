@@ -20,8 +20,7 @@ export default class AnimaNumeros {
   }
 
   animaNumeros() {
-    const numeros = document.querySelectorAll();
-    numeros.forEach((numero) => {
+    this.numeros.forEach((numero) => {
       this.animaAsync(numero);
     });
   }
