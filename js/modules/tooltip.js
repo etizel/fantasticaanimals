@@ -10,7 +10,11 @@ export default class Tooltip {
 
   onMouseMove(event) {
     this.tooltipBox.style.top = `${event.pageY + 20}px`;
-    this.tooltipBox.style.left = `${event.pageX + 20}px`;
+    if (event.pageX + 240 > window.innerWidth) {
+      this.tooltipBox.style.left = `${event.pageX - 190}px`;
+    } else {
+      this.tooltipBox.style.left = `${event.pageX + 20}px`;
+    }
   }
 
   onMouseLeave({ currentTarget }) {
