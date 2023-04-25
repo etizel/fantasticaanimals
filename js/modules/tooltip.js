@@ -1,6 +1,11 @@
 export default class Tooltip {
   constructor(tooltips) {
     this.tooltips = document.querySelectorAll(tooltips);
+
+    // bind do objeto da classe aos objetos
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.onMouseMove = this.onMouseMove.bind(this);
+    this.onMouseOver = this.onMouseOver.bind(this);
   }
 
   onMouseMove(event) {
@@ -10,8 +15,8 @@ export default class Tooltip {
 
   onMouseLeave() {
     this.tooltipBox.remove();
-    this.element.removeEventListener('mouseleave', onMouseLeave);
-    this.element.removeEventListener('mousemove', onMouseMove);
+    this.element.removeEventListener('mouseleave', this.onMouseLeave);
+    this.element.removeEventListener('mousemove', this.onMouseMove);
   }
 
   criarTooltipBox(element) {
@@ -38,5 +43,10 @@ export default class Tooltip {
     });
   }
 
-  init() {}
+  init() {
+    if (this.tooltips.length) {
+      this.addTooltipsEvent();
+    }
+    return this;
+  }
 }
