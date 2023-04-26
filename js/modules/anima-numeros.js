@@ -3,6 +3,8 @@ export default class AnimaNumeros {
     this.numeros = document.querySelectorAll(numeros);
     this.observerTarget = document.querySelector(observerTarget);
     this.activeObserver = activeObserver;
+
+    this.handleMutation = this.handleMutation.bind(this);
   }
 
   // recebe um element do dom, com número em seu texto.
