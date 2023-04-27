@@ -1,7 +1,8 @@
 export default function fetchBitcoin(url, target) {
   fetch(url)
+    // eslint-disable-next-line arrow-body-style
     .then((response) => {
-      response.json();
+      return response.json();
     })
     .then((bitcoin) => {
       const btcPreco = document.querySelector(target);
