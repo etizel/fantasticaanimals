@@ -9,7 +9,7 @@ export default function fetchAnimais(url, target) {
     div.innerHTML = `<h3>${animal.specie}</h3><span data-numero>${animal.total}</span>`;
     return div;
   }
-
+  // Anima os números de cada animal
   function animaAnimaisNumeros() {
     const animaNumeros = new AnimaNumeros('[data-numero]', '.numeros', 'ativo');
     animaNumeros.init();
@@ -27,6 +27,7 @@ export default function fetchAnimais(url, target) {
       const animaisResponse = await fetch(url);
       // transforma resposta em JSON
       const animaisJson = await animaisResponse.json();
+      // Após a transformação do JSON ativa as funções de animar e preencher os números
       animaisJson.forEach((animal) => {
         preencherAnimais(animal);
       });
