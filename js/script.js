@@ -1,5 +1,6 @@
 import ScrollSuave from './modules/scroll-suave.js';
-import initAnimacaoScroll from './modules/scroll-animacao.js';
+// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
+import ScrollAnimacao from './modules/scroll-animacao.js';
 import Accordion from './modules/accordion.js';
 // eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import TabNav from './modules/tabnav.js';
@@ -35,10 +36,12 @@ modal.init();
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
+const scroolAnimacao = new ScrollAnimacao('[data-anime="scroll"]');
+scroolAnimacao.init();
+
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
-initAnimacaoScroll();
 
 fetchAnimais('../../animaisapi.json', '.numeros-grid');
 
